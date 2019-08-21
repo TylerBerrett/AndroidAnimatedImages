@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/button_back"
+            android:icon="@drawable/arrow_back"
+            android:title="Back"/>
+
+    <item
+            android:id="@+id/button_play"
+            android:icon="@drawable/play_button"
+            android:checkable="true"
+            android:title="Play"/>
+
+    <item
+            android:id="@+id/button_forward"
+            android:icon="@drawable/arrow_forward"
+            android:title="Next"/>
+
+</menu>
