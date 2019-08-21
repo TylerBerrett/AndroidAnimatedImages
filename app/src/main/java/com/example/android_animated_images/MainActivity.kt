@@ -3,11 +3,13 @@ package com.example.android_animated_images
 import android.annotation.SuppressLint
 import android.graphics.ImageDecoder
 import android.graphics.drawable.AnimatedImageDrawable
+import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,11 +41,15 @@ class MainActivity : AppCompatActivity() {
         imageHolder = findViewById(R.id.image_gif_holder)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             val animatedGif = ImageDecoder.decodeDrawable(ImageDecoder.createSource(resources, R.drawable.record))
             imageHolder.setImageDrawable(animatedGif)
             (animatedGif as AnimatedImageDrawable).start()
-        }
+        }*/
+
+        val lightBulbGif = ContextCompat.getDrawable(this, R.drawable.light_bulb_gif)
+        imageHolder.setImageDrawable(lightBulbGif)
+        (lightBulbGif as AnimationDrawable).start()
 
     }
 }
